@@ -69,6 +69,7 @@ public sealed partial class AlienScannerDisplay : FancyWindow
         }
 
         SetText(true, _nodeNames);
+        SpriteView.SetEntity(con.Attached);
     }
 
     private void SetText(
@@ -105,5 +106,7 @@ public sealed partial class AlienScannerDisplay : FancyWindow
             NodesClearedLabel.Visible = true;
             NodesList.Visible = false;
         }
+        SpriteView.Visible = NodesList.Visible;
+        NoDataTex.Visible = !SpriteView.Visible;
     }
 }
