@@ -1,3 +1,4 @@
+using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Pinwheel.AlienRock;
 using Content.Shared._Pinwheel.AlienRock.Equipment;
@@ -93,10 +94,11 @@ public sealed partial class AlienScannerDisplay : FancyWindow
                 var nodeLabel = new Button
                 { // using buttons for this is stupid but i cba making it look good because i don't know UI
                     Text = node,
-                    Margin = new Thickness(15, 5, 0, 0),
+                    Margin = new Thickness(0.5f, 1f, 0.5f, 0.5f),
                     MaxHeight = 40,
                     Disabled = true,
                 };
+                nodeLabel.AddStyleClass(StyleClass.ButtonOpenRight);
                 NodesList.Children.Add(nodeLabel);
             }
         }

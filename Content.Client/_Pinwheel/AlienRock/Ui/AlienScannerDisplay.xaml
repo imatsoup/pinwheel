@@ -3,39 +3,42 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     Title="{Loc 'alienrock-scanner-menu-title'}"
     MinSize="400 300"
-    SetSize="400 300"
-    Resizable="True"
+    Resizable="false"
     >
     <BoxContainer Orientation="Vertical" HorizontalExpand = "True" >
         <controls:StripeBack>
             <Label Name="ScannerStateLabel" HorizontalAlignment="Center" StyleClasses="Highlight" Margin="4 0 0 4" />
         </controls:StripeBack>
-            <BoxContainer Orientation = "Horizontal" HorizontalExpand = "True">
-                <PanelContainer HorizontalExpand="True" VerticalExpand="True">
-                    <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="#202023"/>
-                    </PanelContainer.PanelOverride>
-                    <BoxContainer Orientation = "Vertical" HorizontalExpand = "True"  HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <SpriteView OverrideDirection="South" Scale = "2 2" Name = "SpriteView" SetSize="64 64"/>
-                        <TextureRect Name="NoDataTex" Access="Public" SetSize="64 64" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
-                    </BoxContainer>
-                </PanelContainer>
+        <BoxContainer Orientation = "Horizontal" HorizontalExpand = "True" VerticalExpand="True" Margin="2">
             <PanelContainer HorizontalExpand="True" VerticalExpand="True">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#202023"/>
-            </PanelContainer.PanelOverride>
-                    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                        <Label Name="NodesClearedLabel"
-                            HorizontalAlignment="Center"
-                            HorizontalExpand="True"
-                            Text="{Loc 'alienrock-scanner-info-empty'}" />
-                        <GridContainer Name="NodesList"
-                            HorizontalAlignment="Center"
-                            HorizontalExpand="True"
-                            Columns="1" Rows="6" />
-                    </BoxContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202023"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation = "Vertical" HorizontalExpand = "True"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <SpriteView OverrideDirection="South" Scale = "4 4" Name = "SpriteView" SetSize="128 128"/>
+                    <TextureRect Name="NoDataTex" Access="Public" SetSize="64 64" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </BoxContainer>
             </PanelContainer>
-            </BoxContainer>
-
+            <PanelContainer HorizontalExpand="True" VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202023"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Name="NodesClearedLabel"
+                        HorizontalAlignment="Center"
+                        HorizontalExpand="True"
+                        Text="{Loc 'alienrock-scanner-info-empty'}" />
+                    <GridContainer Name="NodesList"
+                        HorizontalAlignment="Center"
+                        HorizontalExpand="True"
+                        Columns="1" Rows="6" Margin="2" />
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
+        <PanelContainer StyleClasses="LowDivider" />
+        <BoxContainer Orientation = "Horizontal" HorizontalExpand = "True" Margin="10 2 5 0" VerticalAlignment="Bottom">
+            <TextureRect StyleClasses="NTLogoDark" Stretch="KeepAspectCentered"
+            VerticalAlignment="Center" SetSize="19 19"/>
+        </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>
