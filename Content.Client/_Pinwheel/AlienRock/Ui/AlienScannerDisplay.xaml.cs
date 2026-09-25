@@ -52,7 +52,12 @@ public sealed partial class AlienScannerDisplay : FancyWindow
         { // set text with empty node list if we're not connected
             var empty = new List<string>();
             SetText(false, empty);
+            SetSprite(null);
             return;
+        }
+        else
+        {
+            SetSprite(con.Attached);
         }
 
         if (rock.Nodes is null)
@@ -70,7 +75,6 @@ public sealed partial class AlienScannerDisplay : FancyWindow
         }
 
         SetText(true, _nodeNames);
-        SpriteView.SetEntity(con.Attached);
     }
 
     private void SetText(
@@ -108,7 +112,13 @@ public sealed partial class AlienScannerDisplay : FancyWindow
             NodesClearedLabel.Visible = true;
             NodesList.Visible = false;
         }
-        SpriteView.Visible = NodesList.Visible;
+    }
+
+    private void SetSprite(
+        EntityUid? rock)
+    {
+        SpriteView.SetEntity(rock);
+        SpriteView.Visible = rock.HasValue;
         NoDataTex.Visible = !SpriteView.Visible;
     }
 }
