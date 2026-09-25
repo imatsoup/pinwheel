@@ -92,10 +92,10 @@ public sealed partial class AlienScannerDisplay : FancyWindow
             foreach (var node in nodes)
             {
                 var nodeLabel = new Button
-                { // using buttons for this is stupid but i cba making it look good because i don't know UI
+                { // buttons used as a shortcut for styling
                     Text = node,
-                    Margin = new Thickness(0.5f, 1f, 0.5f, 0.5f),
-                    MaxHeight = 40,
+                    Margin = new Thickness(0.5f, 1f, 0.5f, 0f),
+                    MinWidth = 200,
                     Disabled = true,
                 };
                 nodeLabel.AddStyleClass(StyleClass.ButtonOpenRight);
